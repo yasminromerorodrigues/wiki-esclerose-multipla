@@ -1,23 +1,28 @@
 /*
- * Tema da Wiki EM
- * Prioridade: legibilidade. Muitas pessoas com EM têm alterações visuais,
- * fadiga e dificuldade de concentração.
- *
- * Fonte: Atkinson Hyperlegible, criada pelo Braille Institute para leitores
- * com baixa visão. Cores: a paleta do site principal (creme, amarelo girassol, verde-tinta,
- * verde-água e coral), com tons ajustados para contraste AA.
+ * Tema da Wiki da comunidade
+ * Segue a identidade do site "Tudo sobre esclerose múltipla":
+ * fontes Antonio (títulos) e Atkinson Hyperlegible (texto), bordas grossas
+ * em verde-tinta, cantos retos, sombras chapadas e blocos em verde-água,
+ * coral e amarelo girassol.
  */
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
-  /* Paleta do site Tudo sobre esclerose múltipla */
-  --em-creme: #F3EDE0;
-  --em-amarelo: #F2B33D;
-  --em-tinta: #0D2721;
-  --em-verde-agua: #6FD1C8;
-  --em-coral: #EE8A62;
+  /* Paleta do site */
+  --em-paper: #F3EDE0;
+  --em-card: #F3EDE0;
+  --em-ink: #0D2721;
+  --em-teal: #6FD1C8;
+  --em-orange: #EE8A62;
+  --em-sun: #F2B33D;
+  --em-sage: #A8B5A2;
+  --em-hl: #E6DCC6;
+  --em-on: #0D2721; /* texto sobre blocos coloridos, igual nos dois temas */
+  --em-bw: 3px;
 
-  /* Verde escuro derivado da paleta, com contraste AA sobre o creme */
+  --em-display: 'Antonio', 'Bebas Neue', 'Arial Narrow', 'Roboto Condensed', Impact, sans-serif;
+  --em-text: 'Atkinson Hyperlegible', Verdana, 'Segoe UI', system-ui, sans-serif;
+
   --ifm-color-primary: #1F6F5E;
   --ifm-color-primary-dark: #1C6455;
   --ifm-color-primary-darker: #1A5E50;
@@ -26,31 +31,50 @@
   --ifm-color-primary-lighter: #24806C;
   --ifm-color-primary-lightest: #2A937C;
 
-  --ifm-background-color: var(--em-creme);
-  --ifm-background-surface-color: var(--em-creme);
-  --ifm-navbar-background-color: var(--em-creme);
-  --ifm-footer-background-color: var(--em-tinta);
-  --ifm-font-color-base: var(--em-tinta);
-  --ifm-heading-color: var(--em-tinta);
-
-  --ifm-font-family-base: 'Atkinson Hyperlegible', system-ui, -apple-system,
-    'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif;
-  --ifm-heading-font-family: var(--ifm-font-family-base);
-
-  /* Texto maior e mais espaçado que o padrão */
-  --ifm-font-size-base: 112.5%;
-  --ifm-line-height-base: 1.75;
-  --ifm-heading-line-height: 1.3;
-  --ifm-paragraph-margin-bottom: 1.25rem;
+  --ifm-background-color: var(--em-paper);
+  --ifm-background-surface-color: var(--em-paper);
+  --ifm-navbar-background-color: var(--em-paper);
+  --ifm-footer-background-color: #0D2721;
+  --ifm-footer-color: #F3EDE0;
+  --ifm-footer-link-color: #F3EDE0;
+  --ifm-font-color-base: var(--em-ink);
+  --ifm-heading-color: var(--em-ink);
+  --ifm-link-color: var(--em-ink);
+  --ifm-link-hover-color: var(--em-ink);
   --ifm-link-decoration: underline;
-}
+  --ifm-link-hover-decoration: underline;
 
-/* Faixa verde-água no rodapé da barra de navegação, como no site */
-.navbar {
-  box-shadow: inset 0 -6px 0 var(--em-verde-agua);
+  --ifm-font-family-base: var(--em-text);
+  --ifm-heading-font-family: var(--em-display);
+  --ifm-font-size-base: 106.25%;
+  --ifm-line-height-base: 1.65;
+  --ifm-heading-line-height: 1.18;
+  --ifm-paragraph-margin-bottom: 1.1rem;
+
+  /* Cantos retos em tudo, como no site */
+  --ifm-global-radius: 0;
+  --ifm-button-border-radius: 0;
+  --ifm-code-border-radius: 0;
+  --ifm-card-border-radius: 0;
+  --ifm-pagination-nav-border-radius: 0;
+  --ifm-menu-link-padding-vertical: 0.45rem;
+  --ifm-toc-border-color: var(--em-ink);
+  --ifm-hr-background-color: var(--em-ink);
+  --ifm-table-border-color: var(--em-ink);
+  --ifm-table-border-width: 2px;
+  --ifm-table-stripe-background: transparent;
+  --ifm-table-head-background: var(--em-teal);
+  --ifm-table-head-color: var(--em-on);
 }
 
 [data-theme='dark'] {
+  --em-paper: #10231E;
+  --em-card: #10231E;
+  --em-ink: #E4D9BE;
+  --em-teal: #5CC2B8;
+  --em-sage: #3C5650;
+  --em-hl: #1A322C;
+
   --ifm-color-primary: #6FD1C8;
   --ifm-color-primary-dark: #57C9BE;
   --ifm-color-primary-darker: #4BC5B9;
@@ -58,39 +82,207 @@
   --ifm-color-primary-light: #87D9D2;
   --ifm-color-primary-lighter: #93DDD6;
   --ifm-color-primary-lightest: #B7E9E4;
-
-  --ifm-background-color: var(--em-tinta);
-  --ifm-background-surface-color: #12332B;
-  --ifm-navbar-background-color: var(--em-tinta);
   --ifm-footer-background-color: #081A16;
-  --ifm-font-color-base: var(--em-creme);
-  --ifm-heading-color: var(--em-creme);
+  --ifm-footer-color: #E4D9BE;
+  --ifm-footer-link-color: #E4D9BE;
 }
 
-/* Linhas curtas são mais fáceis de acompanhar */
+/* ---------- Texto ---------- */
 .markdown {
-  max-width: 72ch;
+  max-width: 68ch;
 }
-
-/* Links sempre sublinhados: não dependem só da cor */
-.markdown a {
+.markdown a,
+.theme-doc-markdown a {
   text-decoration: underline;
-  text-underline-offset: 0.18em;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  font-weight: 700;
+}
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4 {
+  font-family: var(--em-display);
+  font-weight: 700;
+  letter-spacing: -0.005em;
+}
+.markdown h1 {
+  font-size: clamp(2.4rem, 7vw, 3.4rem);
+  line-height: 1.12;
+}
+.markdown h2 {
+  font-size: 2rem;
+  margin-top: 2.2rem;
+  padding-bottom: 0.2rem;
+  border-bottom: var(--em-bw) solid var(--em-ink);
+}
+.markdown h3 {
+  font-size: 1.5rem;
+}
+.markdown strong {
+  font-weight: 700;
 }
 
 /* Foco do teclado bem visível */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
+summary:focus-visible,
 [tabindex]:focus-visible {
-  outline: 3px solid var(--ifm-color-primary);
-  outline-offset: 3px;
-  border-radius: 2px;
+  outline: 3px solid var(--em-orange);
+  outline-offset: 2px;
 }
 
-/* Caixa "Em resumo" no topo de cada página */
-.markdown .theme-admonition-tip {
-  font-size: 1.05em;
+/* ---------- Barra do topo ---------- */
+.navbar {
+  border-bottom: var(--em-bw) solid var(--em-ink);
+  box-shadow: none;
+}
+.navbar__title {
+  font-family: var(--em-display);
+  font-weight: 700;
+  font-size: 1.45rem;
+}
+.navbar__logo {
+  height: 2.2rem;
+}
+.navbar__item.navbar__link,
+.navbar__link {
+  font-family: var(--em-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  color: var(--em-ink);
+}
+.navbar__link--active {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+}
+.navbar-sidebar {
+  background: var(--em-paper);
+}
+
+/* ---------- Menu lateral ---------- */
+.theme-doc-sidebar-container {
+  border-right: var(--em-bw) solid var(--em-ink) !important;
+}
+.menu__link {
+  font-weight: 700;
+  color: var(--em-ink);
+  border: 2px solid transparent;
+}
+.menu__link:hover {
+  background: var(--em-hl);
+}
+.menu__link--active:not(.menu__link--sublist) {
+  background: var(--em-teal);
+  color: var(--em-on);
+  border-color: var(--em-ink);
+}
+.menu__list-item-collapsible:hover {
+  background: var(--em-hl);
+}
+.menu__link--sublist,
+.menu__list-item-collapsible > .menu__link {
+  font-family: var(--em-display);
+  font-size: 1.15rem;
+}
+
+/* ---------- Caixas de aviso, no formato dos blocos do site ---------- */
+.theme-admonition {
+  border: var(--em-bw) solid var(--em-ink) !important;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0 var(--em-ink);
+  color: var(--em-on);
+  margin-bottom: 1.6rem;
+}
+.theme-admonition a {
+  color: var(--em-on);
+}
+.theme-admonition [class*='admonitionHeading'] {
+  font-family: var(--em-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-transform: none;
+  color: var(--em-on);
+}
+.theme-admonition [class*='admonitionIcon'] svg {
+  fill: var(--em-on);
+}
+/* "Em resumo": verde-água */
+.theme-admonition-tip {
+  background: var(--em-teal) !important;
+}
+/* "Aguardando revisão" e avisos: coral, como os alertas do site */
+.theme-admonition-caution,
+.theme-admonition-warning,
+.theme-admonition-danger {
+  background: var(--em-orange) !important;
+}
+/* Informações e selo de revisado: amarelo girassol */
+.theme-admonition-info,
+.theme-admonition-note {
+  background: var(--em-sun) !important;
+}
+
+/* ---------- Cartões das seções e navegação entre páginas ---------- */
+.card {
+  border: var(--em-bw) solid var(--em-ink) !important;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0 var(--em-ink) !important;
+  background: var(--em-card) !important;
+  color: var(--em-ink);
+}
+.card h2 {
+  font-family: var(--em-display);
+  font-weight: 700;
+}
+.pagination-nav__link {
+  border: var(--em-bw) solid var(--em-ink);
+  border-radius: 0;
+  background: var(--em-card);
+}
+.pagination-nav__link--next {
+  background: var(--em-teal);
+  color: var(--em-on);
+}
+.pagination-nav__link--next .pagination-nav__sublabel,
+.pagination-nav__link--next .pagination-nav__label {
+  color: var(--em-on);
+}
+.pagination-nav__label {
+  font-family: var(--em-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+.pagination-nav__sublabel {
+  font-weight: 700;
+  color: var(--em-ink);
+}
+
+/* ---------- Tabelas ---------- */
+.markdown table {
+  border: var(--em-bw) solid var(--em-ink);
+}
+.markdown th {
+  font-family: var(--em-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+}
+
+/* ---------- Rodapé ---------- */
+.footer {
+  border-top: var(--em-bw) solid var(--em-ink);
+}
+
+/* ---------- Botões ---------- */
+.button {
+  font-family: var(--em-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  border: var(--em-bw) solid var(--em-ink);
 }
 
 @media (prefers-reduced-motion: reduce) {

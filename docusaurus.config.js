@@ -8,6 +8,7 @@ const REPO = 'wiki-esclerose-multipla';
 const config = {
   title: 'Wiki Esclerose Múltipla',
   tagline: 'Informação clara e confiável sobre esclerose múltipla',
+  favicon: 'img/girassol.svg',
 
   url: `https://${GITHUB_USER}.github.io`,
   baseUrl: `/${REPO}/`,
@@ -44,8 +45,10 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      // Como o site principal: sempre abre no tema claro
       colorMode: {
-        respectPrefersColorScheme: true,
+        defaultMode: 'light',
+        respectPrefersColorScheme: false,
       },
       docs: {
         sidebar: {
@@ -53,7 +56,11 @@ const config = {
         },
       },
       navbar: {
-        title: 'Wiki EM',
+        title: 'Wiki da comunidade',
+        logo: {
+          alt: 'Girassol, símbolo das deficiências ocultas',
+          src: 'img/girassol.svg',
+        },
         items: [
           {
             type: 'docSidebar',
